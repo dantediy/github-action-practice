@@ -10,8 +10,12 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18
+      - name: Install dependencies
+        run: npm ci # or npm install
       - name: Lint
         run: npm lint
+      - name: Print something
+        run: echo "Done linting"
   test:
     runs-on: ubuntu-latest
     steps:
@@ -19,8 +23,12 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18
+      - name: Install dependencies
+        run: npm ci # or npm install
       - name: Test
         run: npm test
+      - name: Print something
+        run: echo "Done testing"
   build:
     runs-on: ubuntu-latest
     steps:
@@ -28,5 +36,9 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18
+      - name: Install dependencies
+        run: npm ci # or npm install
       - name: Build
-        run: npm build
+        run: npm run build
+      - name: Print something
+        run: echo "Done!!!"
